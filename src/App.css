@@ -1,0 +1,182 @@
+.frame{
+  width: 500px;
+  height: 500px;
+}
+
+.translate-center{
+  transform:translate(-50%,-50%);
+}
+
+
+
+.num-wrapper{
+  width: 200px;
+  height: 200px;
+}
+
+.num{
+  width: 90px;
+  height: max-content;
+}
+
+.up-btn{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-bottom: 30px solid #aaa;
+  border-top: 0;  
+}
+
+.up-btn.active{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-bottom: 30px solid #666;
+  border-top: 0;  
+}
+
+.up-btn.active:active{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-bottom: 30px solid #333;
+  border-top: 0;  
+}
+
+.down-btn{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-top: 30px solid #aaa;
+  border-bottom: 0;  
+}
+
+.down-btn.active{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-top: 30px solid #666;
+  border-bottom: 0;  
+}
+
+.down-btn.active:active{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-top: 30px solid #333;
+  border-bottom: 0;  
+}
+
+.display-num{
+  width: 80px;
+  height: 80px;
+}
+
+.line-height{
+  line-height: 70px;
+}
+
+.problem-wrapper{
+  height: 200px;
+  width: 300px;
+}
+.problem-wrapper p:nth-of-type(1){
+  opacity: .6;
+  font-size: 34px;
+  color: blue;
+}
+.problem-wrapper p:nth-of-type(2){
+  opacity: 1;
+  font-size: 48px;
+}
+.problem-wrapper p:nth-of-type(3){
+  opacity: .6;
+  font-size: 34px;
+}
+.problem-wrapper p:nth-of-type(4){
+  opacity: 0;
+  font-size: 34px;
+}
+
+.problem-wrapper.correct p:nth-of-type(1){
+  opacity: .6;
+  font-size: 34px;
+  animation: correct1 .1s forwards;
+  color: blue;
+}
+.problem-wrapper.correct p:nth-of-type(2){
+  opacity: 1;
+  font-size: 48px;
+  animation: correct2 .1s forwards;
+}
+.problem-wrapper.correct p:nth-of-type(3){
+  opacity: .6;
+  font-size: 34px;
+  animation: correct3 .1s forwards;
+}
+.problem-wrapper.correct p:nth-of-type(4){
+  opacity: .6;
+  font-size: 34px;
+  animation: correct4 .1s forwards;
+}
+
+@keyframes correct1{
+  0%{
+    transform: translateY(0);
+    opacity:.6;
+  }
+
+  100%{
+    transform: translateY(-36px);
+    opacity:0;
+  }
+}
+
+@keyframes correct2{
+  0%{
+    color: blue;
+    transform: translateY(0);
+    opacity:1;
+  }
+  100%{
+    color: blue;
+    transform: translateY(-51px);
+    opacity:.6;
+    font-size: 34px; 
+  }
+}
+
+@keyframes correct3{
+  0%{
+    transform: translateY(0);
+    opacity:.6;
+  }
+  100%{
+    transform: translateY(-51px);
+    opacity:1;
+    font-size: 48px;
+  }
+}
+
+@keyframes correct4{
+  0%{
+    transform: translateY(0);
+    opacity:.2;
+  }
+  100%{
+    transform: translateY(-51px);
+    opacity:.6;
+  }
+}
