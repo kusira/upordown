@@ -111,7 +111,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className='w-10/12 mx-auto'>
+      <main className='mx-auto'>
         <div className='frame border-2 border-black mx-auto mt-10'>
           {scene==0 && <Start setScene={setScene}/>}
           {scene==1 && <Game setScene={setScene} timer={timer} numberofQuesions={numberofQuesions} problems={problems} answers={answers}/>}

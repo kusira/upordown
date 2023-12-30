@@ -59,61 +59,63 @@ export default function Game({ setScene, timer, numberofQuesions ,problems ,answ
   }
 
   return (
-    <div className='w-full h-full relative'>
-      {/* ステータス */}
-      <div className="status absolute top-3 left-3">
-        <p className="text-2xl">{correctCnt} / {numberofQuesions}</p>
-        <p className="text-2xl">{m}:{s}:{ms}</p>
-      </div>
-      <div className='inset-2/4 absolute w-max h-max translate-center'>
-        {/* 問題 */}
-        <div className={`mt-6 flex flex-col problem-wrapper ${correctAnimation==1 ? 'correct':''}`}>
-          <p className="text-center">
-            {correctCntDelay==0 ? "開始": `${problems[correctCntDelay-1]}${answers[correctCnt-1]}`}
-          </p>
-          <p className="text-center">
-            {correctCntDelay == numberofQuesions ? "終了": problems[correctCntDelay]}
-            {correctCnt != correctCntDelay ? answers[correctCnt-1] : ""}
-          </p>
-          <p className="text-center">
-            {correctCntDelay==numberofQuesions-1 ? "終了": problems[correctCntDelay+1]}
-          </p>
-          <p className="text-center">
-            {correctCntDelay==numberofQuesions-2 ? "終了": problems[correctCntDelay+2]}
+    <>
+      <div className='w-full h-full relative'>
+        {/* ステータス */}
+        <div className="status absolute top-2 left-2">
+          <p className="text-xl">{correctCnt} / {numberofQuesions}</p>
+          <p className="text-xl">{m}:{s}:{ms}</p>
+        </div>
+        <div className='inset-2/4 absolute w-max h-max translate-center game-ui'>
+          {/* 問題 */}
+          <div className={`mt-6 flex flex-col problem-wrapper ${correctAnimation==1 ? 'correct':''}`}>
+            <p className="text-center">
+              {correctCntDelay==0 ? "開始": `${problems[correctCntDelay-1]}${answers[correctCnt-1]}`}
             </p>
-        </div> 
-        {/* 回答 */}
-        <div className='num-wrapper flex gap-4 mt-12 mx-auto'>
-          <div className='num flex flex-col gap-2'>
-            <div
-              className={`cursor-pointer mx-auto up-btn ${leftNum!=9 ? 'active':''}`}
-              onClick={leftUpBtn}
+            <p className="text-center">
+              {correctCntDelay == numberofQuesions ? "終了": problems[correctCntDelay]}
+              {correctCnt != correctCntDelay ? answers[correctCnt-1] : ""}
+            </p>
+            <p className="text-center">
+              {correctCntDelay==numberofQuesions-1 ? "終了": problems[correctCntDelay+1]}
+            </p>
+            <p className="text-center">
+              {correctCntDelay==numberofQuesions-2 ? "終了": problems[correctCntDelay+2]}
+              </p>
+          </div> 
+          {/* 回答 */}
+          <div className='num-wrapper flex gap-4 mt-12 mx-auto'>
+            <div className='num flex flex-col gap-2'>
+              <div
+                className={`cursor-pointer mx-auto up-btn ${leftNum!=9 ? 'active':''}`}
+                onClick={leftUpBtn}
+                ></div>
+              <div className='display-num border-2 border-black mx-auto'>
+                <p className='text-center text-6xl line-height'>{leftNum}</p>
+              </div>
+              <div
+                className={`cursor-pointer mx-auto down-btn ${leftNum!=0 ? 'active':''}`}
+                onClick={leftDownBtn}
               ></div>
-            <div className='display-num border-2 border-black mx-auto'>
-              <p className='text-center text-6xl line-height'>{leftNum}</p>
             </div>
-            <div
-              className={`cursor-pointer mx-auto down-btn ${leftNum!=0 ? 'active':''}`}
-              onClick={leftDownBtn}
-            ></div>
-          </div>
 
-          <div className='num flex flex-col gap-2'>
-            <div
-              className={`cursor-pointer mx-auto up-btn ${rightNum!=9 ? 'active':''}`}
-              onClick={rightUpBtn}
+            <div className='num flex flex-col gap-2'>
+              <div
+                className={`cursor-pointer mx-auto up-btn ${rightNum!=9 ? 'active':''}`}
+                onClick={rightUpBtn}
+              ></div>
+              <div className='display-num border-2 border-black mx-auto'>
+                <p className='text-center text-6xl line-height'>{rightNum}</p>
+              </div>
+              <div
+                className={`cursor-pointer mx-auto down-btn ${rightNum!=0 ? 'active':''}`}
+                onClick={rightDownBtn}
             ></div>
-            <div className='display-num border-2 border-black mx-auto'>
-              <p className='text-center text-6xl line-height'>{rightNum}</p>
             </div>
-            <div
-              className={`cursor-pointer mx-auto down-btn ${rightNum!=0 ? 'active':''}`}
-              onClick={rightDownBtn}
-          ></div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
