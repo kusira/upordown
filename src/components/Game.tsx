@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function Game({ setScene, timer, numberofQuesions ,problems ,answers }: { setScene: any, timer: number,numberofQuesions:number, problems:Array<string> ,answers:Array<number>}) {
   let m: string = ( '00' + Math.floor((timer/1000)/60) ).slice( -2 );

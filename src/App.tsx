@@ -11,7 +11,6 @@ import Footer from "./components/Footer";
 function App() {
   const [timer, setTimer] = useState<number>(0);
   const [scene, setScene] = useState<number>(0);
-  const [startTime, setStartTime] = useState<number>(Date.now());
   const [problems, setProblems] = useState(Array<string>);
   const [answers, setAnswers] = useState(Array<number>);
 
@@ -96,17 +95,14 @@ function App() {
   },[scene])
 
   useEffect(()=>{
-    setStartTime(Date.now());
-  },[scene]);
-
-  useEffect(()=>{
+    let startTime: number = Date.now();
     if(scene == 1){
       const interval = setInterval(() => {
         setTimer(Date.now()-startTime)
       }, 10);
       return () => clearInterval(interval);
     }
-  }, [scene]);
+  },[scene]);
 
   return (
     <>
